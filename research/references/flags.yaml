@@ -9,7 +9,7 @@ about: |
   flag by name. Ambient humans pick flags by **activity**: a flag with one is a spot where a
   civilian sits, smokes, warms his hands or leaves the level.
 complete: |
-  Every `AddFlag` call whose name is a literal string: 7,057 flags (4,167 names) added by 94 scripts
+  Every `AddFlag` call whose name is a literal string: {count} flags (4,167 names) added by 94 scripts
   of 62 levels. 23 positions are computed at run time and show none; 79 flags come from scripts shared by several
   levels or whose names are not recovered (*other*). What each activity does is on
   [World flags](../research/flags.md#activities); what the group means on path-network flags is not traced. The

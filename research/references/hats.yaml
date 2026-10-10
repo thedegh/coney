@@ -10,7 +10,7 @@ about: |
   uses the hat model's own attach point (`0x003a3ba0`). The hats are [objects](objects.md);
   [Characters: hats](../research/characters.md#hats).
 complete: |
-  All 908 fittings of `config_preload2.lua` are listed: 28 sets, one per Warriors model, 14 to 43 hats each. A hat that
+  All {count} fittings of `config_preload2.lua` are listed: 28 sets, one per Warriors model, 14 to 43 hats each. A hat that
   is in no slot of a wearer's set gets a default transform. Each hat shows its object's image where it has one.
 defaults: {source: "config_preload2.lua, CfgHat", evidence: confirmed-code}
 entries:

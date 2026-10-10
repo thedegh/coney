@@ -8,7 +8,7 @@ about: |
   The kind picks the class: 0 a `VolumeBox`, 2 a `PlayerBox`, 3 a `TurfBox`
   ([Tasks](../research/tasks.md#classes)).
 complete: |
-  Every `AddVolumeBox` call whose name is a literal string: 974 boxes (547 volume, 251 player and 176
+  Every `AddVolumeBox` call whose name is a literal string: {count} boxes (547 volume, 251 player and 176
   turf boxes) in 47 levels. *Held in* and *Turf of* are filled where a script keeps the handle in a global: 64 of
   the 87 `GangAddTurfBox` calls resolve to a box. What a player box does differently from a volume box is not
   traced.

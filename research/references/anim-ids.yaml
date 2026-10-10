@@ -8,7 +8,7 @@ about: |
   with the `ANIM_*` constants of `royal.lua`; the locomotion slots are
   [Characters, Anim slots](../research/characters.md#anim-slots).
 complete: |
-  All 722 ids are listed with the generic clip and Rembrandt's own clip where he has one. Names
+  All {count} ids are listed with the generic clip and Rembrandt's own clip where he has one. Names
   exist only for the ids `royal.lua` defines.
 defaults: {source: "royal.lua (names); character data (clips); 0x005105d8 (slots)", evidence: inferred}
 entries:

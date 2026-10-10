@@ -7,7 +7,7 @@ about: |
   ([World objects: doors](../research/objects.md#doors)). The number was thought to be a lock kind; it is
   the door's number in its level, which ties the level's navigation links to the door.
 complete: |
-  Every `SpawnDoor` call (484 doors in 45 levels). The number's links: an AI charges through a
+  Every `SpawnDoor` call ({count} doors in 45 levels). The number's links: an AI charges through a
   kind-`0x40` link, and opening or breaking the door clears their avoid bit
   ([Navigation links](../research/objects.md#nav-links)). Hitpoints and states per door type are on
   [World objects](../research/objects.md#door-states).

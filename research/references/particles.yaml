@@ -6,7 +6,7 @@ about: |
   Every type of the script type table: the particle systems `SpawnParticle` makes, and the object
   behaviours, lights and glass that share the table ([Particles](../research/particles.md)).
 complete: |
-  All 270 types are listed. The sprite is traced for 58 of them.
+  All {count} types are listed. The sprite is traced for 58 of them.
 defaults: {source: "SLUS_212.15, script type table 0x00512f28", evidence: confirmed-code}
 entries:
   - {name: glass_script, index: 61, kind: glass, flags: 0x0400, init: 0x003e29e8}

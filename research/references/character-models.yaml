@@ -7,7 +7,7 @@ about: |
   dictionary and character data (animations) by hash ([Characters](../research/characters.md#files)). A
   `<model>_a` record is the variant used in levels 60-64.
 complete: |
-  Every record (543) is listed. Names are recovered by hashing candidate strings; a record
+  Every record ({count}) is listed. Names are recovered by hashing candidate strings; a record
   without a name has none of its candidates on the disc yet.
 defaults: {source: "warriors.glr, Character List (chunk 0x44)", evidence: confirmed-code}
 entries:

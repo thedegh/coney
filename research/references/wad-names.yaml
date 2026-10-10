@@ -7,7 +7,7 @@ about: |
   `./ee_files/<name>` ([WARRIORS.DIR](../research/formats/wad-dir.md)), so a name is known once a candidate
   string hashes to an entry. Each name here was checked against its hash.
 complete: |
-  4,073 of 10,701 names are known; the streamed world and most early entries are still unnamed.
+  {count} of 10,701 names are known; the streamed world and most early entries are still unnamed.
 defaults: {source: "name recovery (coney-tools wad names and the WAD survey)", evidence: confirmed-code}
 entries:
   - {crc: 0x10ce8a36, name: accoustic.anm, kind: anm, index: 3615}

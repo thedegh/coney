@@ -8,7 +8,7 @@ about: |
   callback is called 33 ms after the goal ends with the human's handle and whether the goal completed
   ([scripted goals](../research/ai.md#scripted)).
 complete: |
-  All 149 goal classes are listed, read from their vtables in the executable: type ids 0-158, with 10, 30,
+  All {count} goal classes are listed, read from their vtables in the executable: type ids 0-158, with 10, 30,
   76, 77, 81, 97, 98, 106, 139 and 151 unused. 67 have a binding that makes them (found by following each binding's
   code three calls deep); the others are pushed by the game's own AI. What a goal does is written only where the
   [AI](../research/ai.md) page traces it; the class names are the game's.

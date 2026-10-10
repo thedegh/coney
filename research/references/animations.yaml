@@ -7,7 +7,7 @@ about: |
   displacement and where it is found ([Animation](../research/formats/animation.md)). Clips that share a
   name but differ are numbered `#2`, `#3` ...
 complete: |
-  Every clip (1,875) is listed. Resource names are recovered by hashing; unnamed ones show as hex.
+  Every clip ({count}) is listed. Resource names are recovered by hashing; unnamed ones show as hex.
 defaults: {source: "character data and .anm resources, clip descriptors", evidence: confirmed-code}
 entries:
   - {id: AI_grab_begin, frames: 10, duration: 0.3333, distance: 0.0827, events: 2, characters: [generic_header], packs: 1}

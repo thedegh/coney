@@ -7,7 +7,7 @@ about: |
   `SpawnCustomCrime`, set how many responders each type draws with `CfgCrimeResponders` and switch one with
   `CfgEnableCrimeType`; the game reports others itself ([AI: crimes](../research/ai.md#crimes)).
 complete: |
-  All 15 types are listed. The names come from a table no code calls, so which name goes with
+  All {count} types are listed. The names come from a table no code calls, so which name goes with
   which number is inferred from the types the code raises.
 defaults: {source: "SLUS_212.15, crime report 0x0041b8b0 and crime-name table 0x0041d2c0", evidence: confirmed-code}
 entries:

@@ -9,7 +9,7 @@ about: |
   `HuPutItemInPocket(human, id, n)` puts an item in a human's pocket (human `+0x250`, the count at
   `+0x254`), to be taken when the human is beaten or mugged.
 complete: |
-  All 23 slots are listed; 15 have an object in `config_preload2.lua` and `level20` reconfigures three. Slots 0 and
+  All {count} slots are listed; 15 have an object in `config_preload2.lua` and `level20` reconfigures three. Slots 0 and
   16-22 have no object and no script names them. What an item is comes from its object's name and its bindings
   (inferred); what the duration does for each item is not traced.
 defaults: {source: "config_preload2.lua, CfgInventoryItem; the Inv bindings", evidence: confirmed-code}

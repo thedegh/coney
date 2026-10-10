@@ -320,6 +320,30 @@ def test_merge_keeps_hand_written_fields_and_entries() -> None:
     assert merged.about == old.about
 
 
+def test_complete_text_counts_the_entries_itself() -> None:
+    reflist = _things([{"id": n} for n in range(1500)])
+    reflist.complete = "{count} of 10,701 are known."
+    assert reflist.complete_text() == "1,500 of 10,701 are known."
+    assert "1,500 of 10,701 are known." in refs_render.page(reflist)
+    assert refs.validate(reflist, "things.yaml") == []
+
+
+def test_validate_refuses_a_typed_in_entry_count() -> None:
+    reflist = _things([{"id": n} for n in range(1500)])
+    for typed in ("All 1,500 are listed.", "All 1500 are listed.", "Every thing (1,500)."):
+        reflist.complete = typed
+        assert "spells out the entry count (1,500)" in "\n".join(refs.validate(reflist, "things.yaml"))
+    for fine in ("All {count} are listed.", "1,500.5 is not a count; 11,500 and 1,5000 are other numbers."):
+        reflist.complete = fine
+        assert refs.validate(reflist, "things.yaml") == []
+
+
+def test_validate_leaves_small_counts_alone() -> None:
+    reflist = _things([{"id": n} for n in range(5)])
+    reflist.complete = "5 of them have a model."
+    assert refs.validate(reflist, "things.yaml") == []
+
+
 # --- pages -------------------------------------------------------------------------------------------------------
 
 

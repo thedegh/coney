@@ -11,7 +11,7 @@ about: |
   type's character data plays in the walk, jog, run and sprint slots (the generic clip when it has none of
   its own). The [speed class](speed-classes.md) is only a fallback.
 complete: |
-  Every type `CfgChar` configures (449) is listed with every argument. The labels (who a type is)
+  Every type `CfgChar` configures ({count}) is listed with every argument. The labels (who a type is)
   are hand-written and still sparse; the meaning of `flag_14b` is not traced.
 defaults: {source: "config_preload2.lua, CfgChar", evidence: inferred}
 entries:

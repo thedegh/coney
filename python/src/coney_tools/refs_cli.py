@@ -491,7 +491,7 @@ STARTERS: dict[str, dict[str, Any]] = {
         "about": "The file names recovered for `WARRIORS.WAD`'s entries. The archive stores only a CRC-32 of\n"
         "`./ee_files/<name>` ([WARRIORS.DIR](../research/formats/wad-dir.md)), so a name is known once a candidate\n"
         "string hashes to an entry. Each name here was checked against its hash.",
-        "complete": "3,990 of 10,701 names are known; the streamed world and most early entries are still unnamed.",
+        "complete": "{count} of 10,701 names are known; the streamed world and most early entries are still unnamed.",
     },
     **refs_env.STARTERS,
     **refs_play.STARTERS,

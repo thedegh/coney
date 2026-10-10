@@ -6,7 +6,7 @@ about: |
   Every object type `CfgObj` configures: weapons, hats and masks, pick-ups, doors and props. The name
   is also the model's name and what scripts pass to create the object.
 complete: |
-  Every object type (1,371) is listed with its class, type, physics shape, size and animations. The
+  Every object type ({count}) is listed with its class, type, physics shape, size and animations. The
   category is our grouping by class. Arguments 2-5, 11 and 14-17 are not traced. 1,293 show their
   model; the other 78 have no Object List record under their name.
 defaults: {source: "config_preload2.lua and config_preload3.lua, CfgObj", evidence: inferred}

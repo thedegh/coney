@@ -212,6 +212,10 @@ entries:
     label: Rembrandt (`_cv` model)        # hand-written
 ```
 
+- In `complete:` write the number of entries as `{count}` (`{count} of 10,701 names are known`), never as a
+  number: the page fills in the real count, so it cannot go stale when entries are added, and `refs render`
+  refuses a text that spells the count out. Counts of a part of the list (the 9 modes among a roster's 450
+  entries) stay hand-written, so check them whenever you add entries.
 - Every entry has a **source** and an **evidence** level (the [levels](#evidence-levels) above, spelled
   `confirmed-code`, `confirmed-runtime`, `inferred`, `speculative`), its own or the list's `defaults`.
 - Each entry has a stable **anchor**, `<list page>#<prefix>-<key>` (`characters.md#char-32`,

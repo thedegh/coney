@@ -41,6 +41,8 @@ EVIDENCE = ("confirmed-code", "confirmed-runtime", "inferred", "speculative")
 #: Fields every entry has, whatever its topic.
 COMMON_FIELDS = ("source", "evidence", "notes")
 _TOP_KEYS = ("title", "about", "complete", "defaults", "entries")
+#: What a list's `complete:` text writes for the number of entries; the pages show the real count.
+COUNT_TOKEN = "{count}"
 _PLAIN = re.compile(r"^[A-Za-z_][A-Za-z0-9_./+-]*$")
 _YAML_WORDS = {"null", "true", "false", "yes", "no", "on", "off", "y", "n", "~"}
 
@@ -132,6 +134,10 @@ class RefList:
         """The entries with the defaults filled in."""
         return [{**self.defaults, **entry} for entry in self.entries]
 
+    def complete_text(self) -> str:
+        """The `complete:` prose with {count} replaced by the number of entries, so a count cannot go stale."""
+        return self.complete.replace(COUNT_TOKEN, f"{len(self.entries):,}")
+
 
 def _check_kind(kind: str, value: Any) -> bool:
     """Whether `value` fits a field of `kind` (None always fits: a field may be unknown)."""
@@ -142,6 +148,18 @@ def _check_kind(kind: str, value: Any) -> bool:
     if kind == "float":
         return isinstance(value, (int, float)) and not isinstance(value, bool)
     return isinstance(value, {"str": str, "bool": bool, "list": list, "dict": dict}[kind])
+
+
+def _typed_count_problems(reflist: RefList, where: str) -> list[str]:
+    """Flag a `complete:` text that spells out the list's entry count instead of writing {count}."""
+    count = len(reflist.entries)
+    if count < 10:
+        return []  # small numbers turn up in prose for other reasons
+    spelled = {f"{count:,}", str(count)}
+    words = re.findall(r"(?<![\d,.])\d[\d,]*(?![\d,]|\.\d)", reflist.complete)
+    if any(word.rstrip(",") in spelled for word in words):
+        return [f"{where}: complete: spells out the entry count ({count:,}); write {COUNT_TOKEN} so it cannot go stale"]
+    return []
 
 
 def validate(reflist: RefList, where: str) -> list[str]:
@@ -174,6 +192,7 @@ def validate(reflist: RefList, where: str) -> list[str]:
         if key_value in seen:
             problems.append(f"{label}: {reflist.topic.key_field} {key_value!r} appears twice")
         seen.add(key_value)
+    problems += _typed_count_problems(reflist, where)
     return problems
 
 

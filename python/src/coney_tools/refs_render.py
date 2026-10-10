@@ -163,7 +163,7 @@ def page(reflist: RefList) -> str:
         lines += [reflist.about, ""]
     if reflist.complete:
         lines += ['!!! info "What is complete"', ""]
-        lines += [("    " + line) if line else "" for line in reflist.complete.splitlines()]
+        lines += [("    " + line) if line else "" for line in reflist.complete_text().splitlines()]
         lines.append("")
     lines += [f"{len(entries):,} entries. Data: `research/references/{topic.key}.yaml`.", ""]
     if topic.split and topic.group_by:
@@ -273,7 +273,8 @@ def index(
         "| --- | ---: | --- |",
     ]
     for reflist in reflists:
-        first = reflist.complete.split(". ")[0].rstrip(".").replace("\n", " ") if reflist.complete else ""
+        complete = reflist.complete_text()
+        first = complete.split(". ")[0].rstrip(".").replace("\n", " ") if complete else ""
         lines.append(
             f"| [{reflist.topic.nav or reflist.title}]({reflist.topic.key}.md) | {len(reflist.entries):,} | "
             f"{_escape(first)}. |"

@@ -6,7 +6,7 @@ about: |
   Gang types: `CfgGang(type, ...)` configures each, `GangCreate(type, name)` creates a gang in a
   level script and `CfgGangMusic` gives it three music tracks. Humans join a gang when they are created.
 complete: |
-  Every gang type (25) is listed with its arguments; the meaning of the byte values is not traced.
+  Every gang type ({count}) is listed with its arguments; the meaning of the byte values is not traced.
   Labels are hand-written.
 defaults: {source: "config_preload2.lua, CfgGang", evidence: inferred}
 entries:

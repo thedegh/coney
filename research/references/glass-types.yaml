@@ -8,7 +8,7 @@ about: |
   `SpawnBreakableGlass(type, corner, cornerU, cornerV, uv0, uv1, 0, triangle1, triangle2)`
   ([World objects: glass](../research/objects.md#glass)).
 complete: |
-  All 19 types are listed with every argument. Any hit breaks a pane (no hitpoints); what breaking
+  All {count} types are listed with every argument. Any hit breaks a pane (no hitpoints); what breaking
   does is on [World objects: a pane's life](../research/objects.md#pane). The sprite words' low halves
   are rectangles of `part_page1`, the sheet of sprite batch 0 that every pane but type 14 draws from; their
   high halves are ignored ([World objects: drawing a pane](../research/objects.md#pane-draw)).

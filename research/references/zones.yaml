@@ -9,7 +9,7 @@ about: |
   per level: the same number names different objects in different levels.
 complete: |
   Every zone number a level's scripts name (`Zone<n>` globals, `<TABLE>.<NAME>_ZONE` fields), switch
-  or spawn objects into: 225 zones in 62 levels. 66 of the 3,133 calls are left out because their zone is not a
+  or spawn objects into: {count} zones in 62 levels. 66 of the 3,133 calls are left out because their zone is not a
   number the level defines: `global.lua`'s `BNESetup` switches its caller's `Zone21` to `Zone32`, and two calls
   of `level95` compute the zone. Objects the level file places in a zone are not counted (how it assigns them is
   not traced).
