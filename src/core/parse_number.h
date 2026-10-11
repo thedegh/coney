@@ -10,5 +10,4 @@ namespace coney {
 /// text, a leading `+` or space, trailing characters, hexadecimal, infinity, NaN or a value out of range. The same
 /// rules as std::from_chars on every platform, including Apple's libc++, which has no floating-point from_chars.
 [[nodiscard]] std::optional<double> parseDecimal(std::string_view text);
-
 } // namespace coney
