@@ -743,6 +743,11 @@ A finding is done when someone else can use it without asking you. For each one:
    file, a dump or an extracted asset never do.
 7. **Build the docs** with `mkdocs build --strict` (see [Writing these docs](writing-docs.md)), which catches broken
    links and pages missing from the navigation.
+8. **Ship the docs with the code.** CI refuses a pull request that changes `src/` or `python/src/` without changing
+   anything under `docs/` or `research/`. A change that needs no documentation (a refactor, a rename) says so with a
+   line `Docs: none` in the pull request description; editing the description re-runs the check. Check it yourself with
+   `git diff --name-only main... | uv run --project python coney-tools repo check-docs`. Counts quoted in a page by
+   hand are held to the data by tests and by `{count}` in the reference lists ([above](#reference-lists)).
 
 ## The Understood measure {#understood}
 

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""Checks on the repository itself, run by `coney-tools repo check`, `coney-tools repo check-title` and CI."""
+"""Checks on the repository itself, run by `coney-tools repo check`, `check-title`, `check-docs` and CI."""
 
 from __future__ import annotations
 
@@ -113,3 +113,28 @@ def first_line(message: str) -> str:
         if line.strip() and not line.startswith("#"):
             return line
     return ""
+
+
+#: Paths whose change alters what the project does or how its tools behave, so the docs must follow.
+CODE_PREFIXES: tuple[str, ...] = ("src/", "python/src/")
+#: Paths that hold the documentation: the site's pages, and the reference lists and bindings behind its generated pages.
+DOC_PREFIXES: tuple[str, ...] = ("docs/", "research/")
+#: The line a pull request body carries when its code change needs no documentation (a refactor, a fix of a typo).
+DOCS_NONE = re.compile(r"^\s*Docs:\s*none\b", re.IGNORECASE | re.MULTILINE)
+
+
+def check_docs(changed: list[str], body: str) -> list[str]:
+    """Check that a pull request changing code changes the docs too, or says `Docs: none` in its body.
+
+    `changed` holds the repository-relative paths the pull request touches (forward slashes). Only `src/` and
+    `python/src/` count as code, so a change to tests, CI or build files asks for nothing. Returns the reasons the
+    pull request is refused; an empty list means it passes.
+    """
+    code = [path for path in changed if path.startswith(CODE_PREFIXES)]
+    if not code or any(path.startswith(DOC_PREFIXES) for path in changed) or DOCS_NONE.search(body):
+        return []
+    shown = ", ".join(code[:3]) + (f" and {len(code) - 3} more" if len(code) > 3 else "")
+    return [
+        f"changes code ({shown}) but nothing under {' or '.join(DOC_PREFIXES)}; "
+        "update the living doc in the same pull request, or put a line `Docs: none` in its description"
+    ]

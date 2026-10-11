@@ -47,3 +47,24 @@ jobs:
             printf '%s\n' "$title" | uv run --project python coney-tools repo check-title - || failed=1
           done < <(git log --no-merges --format=%s HEAD^1..HEAD^2)
           exit "$failed"
+
+  # A pull request that changes the engine (src/) or the tools (python/src/) must change the docs too (docs/ or
+  # research/), or say `Docs: none` on a line of its description: the living docs are updated in the same pull request,
+  # never later (AGENTS.md, Documentation). Editing the description re-runs the check.
+  docs:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+      # The description is attacker-controlled: it reaches the checker only through a file written from an
+      # environment variable, never expanded into the script's text. HEAD^1...HEAD^2 is what the pull request
+      # changes since it branched off (see the commits job).
+      - name: Check that the docs change with the code
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          printf '%s\n' "$PR_BODY" > "$RUNNER_TEMP/pr-body.md"
+          git diff --name-only HEAD^1...HEAD^2 |
+            uv run --project python coney-tools repo check-docs --body "$RUNNER_TEMP/pr-body.md"

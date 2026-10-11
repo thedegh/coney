@@ -26,7 +26,7 @@ from coney_tools import (
     xbox_cli,
 )
 from coney_tools.config import PATH_KEYS, ConfigError, find_repo_root, load_config
-from coney_tools.repo_checks import check_pointer_files, check_title, first_line, load_title_rules
+from coney_tools.repo_checks import check_docs, check_pointer_files, check_title, first_line, load_title_rules
 
 
 def _config_show() -> int:
@@ -72,6 +72,24 @@ def _repo_check_title(file: str) -> int:
     return 0
 
 
+def _repo_check_docs(body_file: str | None) -> int:
+    """Check the changed paths on stdin (one per line) against the pull request body in `body_file`; 1 when refused."""
+    changed = [line.strip().replace("\\", "/") for line in sys.stdin.read().splitlines() if line.strip()]
+    body = ""
+    if body_file is not None:
+        try:
+            body = Path(body_file).read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError) as error:
+            print(f"coney-tools: {body_file}: cannot be read ({error})", file=sys.stderr)
+            return 2
+    problems = check_docs(changed, body)
+    if problems:
+        print(f"docs refused: {'; '.join(problems)} (see docs/guides/research-workflow.md)")
+        return 1
+    print("docs: ok")
+    return 0
+
+
 def _build_parser() -> argparse.ArgumentParser:
     """Build the parser for every group and command; each group's commands are registered by its own helper."""
     parser = argparse.ArgumentParser(prog="coney-tools", description="Coney's own automation.")
@@ -86,6 +104,10 @@ def _build_parser() -> argparse.ArgumentParser:
         "check-title", help="check a commit or pull request title against the commit title rules"
     )
     check_title_parser.add_argument("file", help="a file whose first line (not blank, not #) is the title; - for stdin")
+    check_docs_parser = repo_commands.add_parser(
+        "check-docs", help="check that a pull request which changes code also changes the docs (changed paths on stdin)"
+    )
+    check_docs_parser.add_argument("--body", help="a file holding the pull request description (for `Docs: none`)")
     _add_wad_commands(groups)
     _add_extract_command(groups)
     _add_audio_commands(groups)
@@ -548,6 +570,8 @@ def _run(args: argparse.Namespace) -> int:
         return _config_show()
     if args.command == "check-title":
         return _repo_check_title(args.file)
+    if args.command == "check-docs":
+        return _repo_check_docs(args.body)
     return _repo_check()
 
 

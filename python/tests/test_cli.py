@@ -106,3 +106,47 @@ def test_check_title_of_an_empty_message_is_refused(tmp_path: Path, monkeypatch:
     monkeypatch.chdir(title_checkout(tmp_path))
     (tmp_path / "msg").write_text("\n# only a comment\n", encoding="utf-8")
     assert main(["repo", "check-title", "msg"]) == 1
+
+
+def test_check_docs_passes_when_the_docs_change_with_the_code(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr("sys.stdin", io.StringIO("src/core/a.cpp\nresearch/references/cars.yaml\n"))
+    assert main(["repo", "check-docs"]) == 0
+
+
+def test_check_docs_passes_for_changes_that_are_not_code(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr("sys.stdin", io.StringIO(".github/workflows/pr.yml\npython/tests/test_cli.py\ntests/a.cpp\n"))
+    assert main(["repo", "check-docs"]) == 0
+
+
+def test_check_docs_refuses_code_without_docs(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    monkeypatch.setattr("sys.stdin", io.StringIO("python/src/coney_tools/wad.py\nsrc/core/a.cpp\n"))
+    assert main(["repo", "check-docs"]) == 1
+    out = capsys.readouterr().out.strip().splitlines()
+    assert len(out) == 1 and out[0].startswith(
+        "docs refused: changes code (python/src/coney_tools/wad.py, src/core/a.cpp)"
+    )
+    assert "Docs: none" in out[0]
+
+
+def test_check_docs_accepts_a_docs_none_line_in_the_body(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    (tmp_path / "body.md").write_text(
+        "## What and why\n\nA rename.\n\ndocs: NONE - no behaviour change\n", encoding="utf-8"
+    )
+    monkeypatch.setattr("sys.stdin", io.StringIO("src\\core\\a.cpp\n"))
+    assert main(["repo", "check-docs", "--body", str(tmp_path / "body.md")]) == 0
+
+
+def test_check_docs_ignores_a_docs_none_inside_a_sentence(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    (tmp_path / "body.md").write_text("I will say Docs: none later.\n", encoding="utf-8")
+    monkeypatch.setattr("sys.stdin", io.StringIO("src/core/a.cpp\n"))
+    assert main(["repo", "check-docs", "--body", str(tmp_path / "body.md")]) == 1
+
+
+def test_check_docs_with_an_unreadable_body_exits_2(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    monkeypatch.setattr("sys.stdin", io.StringIO("src/core/a.cpp\n"))
+    assert main(["repo", "check-docs", "--body", str(tmp_path / "missing.md")]) == 2
+    assert "cannot be read" in capsys.readouterr().err

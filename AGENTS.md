@@ -61,7 +61,9 @@ player's path, gamepad input, playthrough tests, the checks to run before report
 Document as you work: a change that alters behaviour, a command or what we know updates its living doc in the same
 commit. One document per subject, updated in place: findings in `docs/research/`, how-tos in `docs/guides/`, the
 why in code comments. Mission work updates `research/missions.yaml` (status, checkpoints) in the same commit and
-reruns `coney-tools missions render`. `HANDOFF.md` holds only the current state of the work (local, never committed).
+reruns `coney-tools missions render`. CI refuses a pull request that changes `src/` or `python/src/` without
+changing `docs/` or `research/`, unless its description has a line `Docs: none`. `HANDOFF.md` holds only the current
+state of the work (local, never committed).
 
 ## Commits and GitHub
 

@@ -24,6 +24,13 @@ with [uv](https://docs.astral.sh/uv/) installed:
 git log -1 --format=%s | uv run --project python coney-tools repo check-title -
 ```
 
+CI also refuses a pull request that changes `src/` or `python/src/` without changing `docs/` or `research/`; put a
+line `Docs: none` in the description when the change needs no documentation. To check it yourself:
+
+```sh
+git diff --name-only main... | uv run --project python coney-tools repo check-docs
+```
+
 To build the documentation:
 
 ```sh

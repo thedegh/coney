@@ -10,7 +10,8 @@
   other email address
 - [ ] No game data, extracted files or dumps (LEGAL.md)
 - [ ] Engine code written from docs/research, not from decompiler output (LEGAL.md#clean-room)
-- [ ] Docs and comments updated; `mkdocs build --strict` passes
+- [ ] Docs and comments updated; `mkdocs build --strict` passes. A change under `src/` or `python/src/` needs a
+  change under `docs/` or `research/`, or a line `Docs: none` in this description
 - [ ] Tests added or updated
 
 ## AI use
