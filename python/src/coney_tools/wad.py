@@ -242,6 +242,44 @@ def recover_names(disc: Disc, entries: list[WadEntry], progress: bool = False) -
     return found
 
 
+#: The first entry of the sorted block: from here on entries are stored in name order
+#: (docs/research/formats/wad-dir.md), which rules out a chance hash match; the entries before it have no such check.
+SORTED_BLOCK_START = 3615
+#: The streamed world's file-name formats (the world loader's `%s_sec.wld`, `%s_sec.mem`, `%s_ms%i.sec`).
+#: Research: docs/research/formats/wad-contents.md#names
+WORLD_FORMATS = ("{}_sec.wld", "{}_sec.mem")
+WORLD_PART_FORMAT = "{}_ms{}.sec"
+#: A streamed world's file: `<world>_ms<i>.sec`, `<world>_sec.wld` or `<world>_sec.mem`.
+WORLD_FILE = re.compile(r"_(?:ms\d+\.sec|sec\.(?:wld|mem))$", re.IGNORECASE)
+#: The highest level number tried for a world stem `level<N>s` / `level<N>d`, and the most parts a world is tried with.
+WORLD_LEVELS = 200
+WORLD_PARTS = 200
+
+
+def streamed_world_names(stems: Iterable[str], hashes: Iterable[int]) -> dict[int, str]:
+    """Names of the streamed-world entries: the loader's format strings applied to every candidate stem.
+
+    The world loader builds a world's names from the level record's world name (`<world>s` / `<world>d`) and three
+    format strings. Each stem (the given ones, and `level<N>s` / `level<N>d` for every plausible level number) is
+    tried with all of them; a name is kept when its hash is one of `hashes`. Returns hash to name.
+    """
+    wanted = set(hashes)
+    found: dict[int, str] = {}
+    candidates = {f"level{number}{kind}" for number in range(WORLD_LEVELS) for kind in "sd"}
+    candidates.update(stems)
+    for stem in sorted(candidates):
+        for fmt in WORLD_FORMATS:
+            name = fmt.format(stem)
+            if name_hash(NAME_PREFIX + name) in wanted:
+                found[name_hash(NAME_PREFIX + name)] = name
+        for part in range(WORLD_PARTS):
+            name = WORLD_PART_FORMAT.format(stem, part)
+            hashed = name_hash(NAME_PREFIX + name)
+            if hashed in wanted:
+                found[hashed] = name
+    return found
+
+
 def refuse_inside_repo(path: Path) -> None:
     """Raise ConfigError when `path` lies inside a Coney checkout: game data must never land in the repository.
 

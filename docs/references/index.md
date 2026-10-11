@@ -69,7 +69,7 @@ copied ([LEGAL.md](repo:LEGAL.md#no-game-data), "Reference lists").
 | [Sound and music](sound.md) | 2,124 | Every configured sound, ambient sound, emitter and literal speech line name is listed. |
 | [Speech](speech.md) | 464 | All 207 speech commands are listed by their names in the executable, and every voice set that has lines, a character type or a script user, with the lines the game finds for each. |
 | [Script events](script-events.md) | 16 | Every message number a script uses with either binding is listed; the senders of 3, 4, 5 and 8 are traced, the other meanings are inferred from callback names. |
-| [WAD entry names](wad-names.md) | 4,073 | 4,073 of 10,701 names are known; the streamed world and most early entries are still unnamed. |
+| [WAD entry names](wad-names.md) | 6,313 | 6,313 of 10,701 names are known; the streamed world and most early entries are still unnamed. |
 
 ## Script bindings
 

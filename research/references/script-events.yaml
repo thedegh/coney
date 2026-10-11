@@ -36,25 +36,25 @@ entries:
     gang_examples: [MrWolf, df.DealerDied, DestroyerDied, P2.CheckDead01, P1.CheckDead01]
   - id: 3
     meaning: "A human entered a volume box or an object's trigger sphere; `(self, human)` ([Triggers](../research/scripting.md#triggers))."
-    source: "the box and sphere updates, 0x00415378 and 0x004146e0"
-    evidence: confirmed-code
     handlers: 567
     clears: 486
     examples: [ObjectiveEnter, GlowGoAway, EnterBoxEvent, GS.RunnerEventTriggered, AddSuspend]
-  - id: 4
-    meaning: "A human left a volume box or trigger sphere, or died inside it; `(self, human)`."
     source: "the box and sphere updates, 0x00415378 and 0x004146e0"
     evidence: confirmed-code
+  - id: 4
+    meaning: "A human left a volume box or trigger sphere, or died inside it; `(self, human)`."
     handlers: 137
     clears: 122
     examples: [GlowComeBack, ObjectiveExit, ExitBoxEvent, ExitInteriorCam, C7.EndButton]
-  - id: 5
-    meaning: "A human is still inside a volume box or trigger sphere (at most once per repeat period); `(self, human)`."
     source: "the box and sphere updates, 0x00415378 and 0x004146e0"
     evidence: confirmed-code
+  - id: 5
+    meaning: "A human is still inside a volume box or trigger sphere (at most once per repeat period); `(self, human)`."
     handlers: 37
     clears: 27
     examples: [ObjectiveEnter, VandalTwiggy, C5.CheckBox, VandalMarcello, VandalChuck]
+    source: "the box and sphere updates, 0x00415378 and 0x004146e0"
+    evidence: confirmed-code
   - id: 6
     meaning: "A store was damaged or vandalised (`StoreDamaged`, `SetStoreBars`)."
     handlers: 29
@@ -67,11 +67,11 @@ entries:
     examples: [C2.TheftCallback, ObjectStolen]
   - id: 8
     meaning: "A human arrived at a flag (`GoalMoveToFlag`); `(flag, human)`."
-    source: "the flag's message handler, 0x00416038"
-    evidence: confirmed-code
     handlers: 121
     clears: 100
     examples: [df.RestoreDealersBrains, P1.Walk03, P3.InsideGate, C2.BanterPassive, P3.AccountantDone]
+    source: "the flag's message handler, 0x00416038"
+    evidence: confirmed-code
   - id: 10
     meaning: "A character saw the player (`SeePlayer`)."
     handlers: 6

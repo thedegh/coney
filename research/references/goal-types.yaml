@@ -15,22 +15,22 @@ complete: |
 defaults: {source: "SLUS_212.15, goal vtables (type +0x0c, name +0x14) and the bindings' code", evidence: confirmed-code}
 entries:
   - {id: 0, name: Idle, vtable: 0x005418f0, process: 0x002cb138}
-  - {id: 1, name: MoveToFlag, vtable: 0x00542130, process: 0x002da588, bindings: [GoalMoveToFlag], calls: 297, scripts: ["36763710", "972fed2e", level11.lua, level11_chapter1.lua, level11_chapter3.lua, level14.lua], meaning: "Walk or run to a world flag ([GoalMoveToFlag](../research/ai.md#move-to-flag))"}
-  - {id: 2, name: MoveToExitFlag, vtable: 0x005420d0, process: 0x002dacf8, bindings: [GangExitWorld, GoalMoveToExitFlag, HuExitWorld], calls: 154, scripts: ["36763710", "3b2574df", global.lua, level11.lua, level11_chapter1.lua, level14.lua], meaning: "Go to a flag and leave the world there"}
+  - {id: 1, name: MoveToFlag, vtable: 0x00542130, process: 0x002da588, bindings: [GoalCallPolice, GoalMoveToFlag, GoalRunCarrotRun], calls: 309, scripts: ["36763710", "972fed2e", level11.lua, level11_chapter1.lua, level11_chapter3.lua, level14.lua], meaning: "Walk or run to a world flag ([GoalMoveToFlag](../research/ai.md#move-to-flag))"}
+  - {id: 2, name: MoveToExitFlag, vtable: 0x005420d0, process: 0x002dacf8, bindings: [GangExitWorld, GoalCallGang, GoalCallPolice, GoalMoveToExitFlag, GoalShopkeeper, HuExitWorld], calls: 163, scripts: ["36763710", "3b2574df", global.lua, level11.lua, level11_chapter1.lua, level14.lua], meaning: "Go to a flag and leave the world there"}
   - {id: 3, name: MoveToFlagNetFlag, vtable: 0x00542070, process: 0x002db5c0}
-  - {id: 4, name: MoveToUseFlag, vtable: 0x00542010, process: 0x002dbc10, bindings: [GoalMoveToUseFlag], calls: 89, scripts: ["36763710", level11_chapter1.lua, level11_chapter2.lua, level11_chapter3.lua, level11_chapter5.lua, level20_backalley.lua]}
+  - {id: 4, name: MoveToUseFlag, vtable: 0x00542010, process: 0x002dbc10, bindings: [GoalMoveToUseFlag, GoalShopkeeper], calls: 94, scripts: ["36763710", level11_chapter1.lua, level11_chapter2.lua, level11_chapter3.lua, level11_chapter5.lua, level20_backalley.lua]}
   - {id: 5, name: MoveToPosition, vtable: 0x00541fb0, process: 0x002dc338}
   - {id: 6, name: MoveToHuman, vtable: 0x00541f50, process: 0x002dc578, bindings: [GoalMoveToHuman], calls: 11, scripts: [hifi.lua, level86.lua, survival.lua], meaning: "Go to a human"}
   - {id: 7, name: RunFromTrain, vtable: 0x00542ac0, process: 0x002f9c88}
-  - {id: 8, name: Melee, vtable: 0x00540450, process: 0x002aebf8, bindings: [GoalMelee], calls: 2, scripts: [level87_chap3_shanty.lua], meaning: "Under a fight goal: sends the fighter in (EngageEnemy) and pushes fight goals once in range ([AI](../research/ai.md#melee-goal))"}
+  - {id: 8, name: Melee, vtable: 0x00540450, process: 0x002aebf8, bindings: [GangCanFlee, GoalDevilRun, GoalMelee, TacticBossScenarioE, TacticBossScenarioF, TacticBossScenarioG, TacticBossScenarioH, TacticPathScout], calls: 63, scripts: [level14.lua, level2_clinic.lua, level2_clubhouse.lua, level31_birdie.lua, level3_chase.lua, level52_chapter1.lua], meaning: "Under a fight goal: sends the fighter in (EngageEnemy) and pushes fight goals once in range ([AI](../research/ai.md#melee-goal))"}
   - {id: 9, name: AttackTarget, vtable: 0x005403f0, process: 0x002af278}
-  - {id: 11, name: EngageEnemy, vtable: 0x00540330, process: 0x002afa48, bindings: [GangEngageEnemy, GoalEngageEnemy], calls: 22, scripts: ["36763710", level20_mainstreet.lua, level20_marketplace.lua, level20_temple.lua, level52.lua, level80.lua], meaning: "The run-in to a fight target, ending close by or with a charge ([AI](../research/ai.md#engage-enemy))"}
+  - {id: 11, name: EngageEnemy, vtable: 0x00540330, process: 0x002afa48, bindings: [GangEngageEnemy, GoalDevilRun, GoalEngageEnemy, GoalGetItem, GoalGrabTarget], calls: 63, scripts: ["36763710", caps.lua, level20_mainstreet.lua, level20_marketplace.lua, level20_temple.lua, level31_reddevil.lua], meaning: "The run-in to a fight target, ending close by or with a charge ([AI](../research/ai.md#engage-enemy))"}
   - {id: 12, name: Chase, vtable: 0x0053fcd0, process: 0x002b1860}
   - {id: 13, name: ChaseSupport, vtable: 0x0053fc70, process: 0x002b2410}
   - {id: 14, name: Shadow, vtable: 0x00541a10, process: 0x002e2d90}
-  - {id: 15, name: Fight, vtable: 0x005402d0, process: 0x002b3ab0, bindings: [GoalFight], calls: 33, scripts: ["36763710", level20_mainstreet.lua, level2_junkyard.lua, level31_sewers.lua, level31_streets.lua, level34.lua], meaning: "The fight goal ([AI](../research/ai.md#fight))"}
+  - {id: 15, name: Fight, vtable: 0x005402d0, process: 0x002b3ab0, bindings: [GangSetReactToViolence, GoalFight, GoalGetItem, GoalGrabTarget, GoalHoldPosition, GoalShopkeeper, TacticDomination], calls: 60, scripts: ["36763710", caps.lua, kinghill.lua, level20_mainstreet.lua, level20_marketplace.lua, level20_temple.lua], meaning: "The fight goal ([AI](../research/ai.md#fight))"}
   - {id: 16, name: Spectate, vtable: 0x00540270, process: 0x002b4330}
-  - {id: 17, name: Cower, vtable: 0x005411d0, process: 0x002d4fe8, bindings: [GoalCower], calls: 11, scripts: [level20_mainstreet.lua, level86.lua, level92_chapter2.lua, level93_chapter1.lua]}
+  - {id: 17, name: Cower, vtable: 0x005411d0, process: 0x002d4fe8, bindings: [GoalCallGang, GoalCallPolice, GoalCower], calls: 15, scripts: [level14.lua, level20_mainstreet.lua, level82_chapter2.lua, level86.lua, level92_chapter2.lua, level93_chapter1.lua]}
   - {id: 18, name: Grabbing, vtable: 0x00540150, process: 0x002b60c0, meaning: "Reaction: grabbing someone ([reaction goals](../research/ai.md#reaction-goals))"}
   - {id: 19, name: Mounting, vtable: 0x005400f0, process: 0x002b6638, meaning: "Reaction: mounting a grounded human"}
   - {id: 20, name: Grabbed, vtable: 0x00540090, process: 0x002b6848, meaning: "Reaction: being grabbed"}
@@ -40,30 +40,30 @@ entries:
   - {id: 24, name: Stunned, vtable: 0x005401b0, process: 0x002b4bb8, meaning: "Reaction: stunned"}
   - {id: 25, name: OnFire, vtable: 0x0053ff70, process: 0x002b4f40, meaning: "Reaction: on fire"}
   - {id: 26, name: Wounded, vtable: 0x0053ff10, process: 0x002b52c0, meaning: "Reaction: wounded"}
-  - {id: 27, name: Blocking, vtable: 0x0053feb0, process: 0x002b5808, meaning: "Blocking an attack ([AI](../research/ai.md#block))"}
+  - {id: 27, name: Blocking, vtable: 0x0053feb0, process: 0x002b5808, bindings: [GangSetReactToViolence], calls: 3, scripts: [level20_marketplace.lua], meaning: "Blocking an attack ([AI](../research/ai.md#block))"}
   - {id: 28, name: FightBackOff, vtable: 0x0053fdf0, process: 0x002b7258}
   - {id: 29, name: HelpRespond, vtable: 0x0053fd90, process: 0x002b7900}
   - {id: 31, name: GrabTarget, vtable: 0x00540390, process: 0x002bb858, bindings: [GoalGrabTarget], calls: 3, scripts: [level95_vigilante.lua, mercy.lua], meaning: "Grab the target"}
-  - {id: 32, name: AvoidEnemies, vtable: 0x005419b0, process: 0x002e3630, bindings: [GoalAvoidEnemies], calls: 4, scripts: [caps.lua, level86.lua]}
+  - {id: 32, name: AvoidEnemies, vtable: 0x005419b0, process: 0x002e3630, bindings: [GoalAvoidEnemies, TacticBossScenarioD], calls: 5, scripts: [caps.lua, level82_chapter5.lua, level86.lua]}
   - {id: 33, name: PlayAnimation, vtable: 0x00542370, process: 0x002e4a70, bindings: [GoalPlayAnimation], meaning: "Play a scene animation; pushed by `GoalAddressPerson`"}
   - {id: 34, name: PlayDynAnimation, vtable: 0x00541410, process: 0x002d3060, bindings: [GoalPlayDynAnimation], calls: 49, scripts: [brawl.lua, hifi.lua, level2_clinic.lua, level31_reddevil.lua, level31_streets.lua, level54_alley.lua], meaning: "Play an animation set by name ([GoalPlayDynAnimation](../research/ai.md#dyn-animation))"}
   - {id: 35, name: PlayDynIdle, vtable: 0x005413b0, process: 0x002d3d58, bindings: [GoalPlayDynIdle], calls: 92, scripts: [caps.lua, level14.lua, level31_streets.lua, level3_street.lua, level54_alley.lua, level55_subway.lua]}
   - {id: 36, name: PlayParlayAnimation, vtable: 0x00542310, process: 0x002e4be0}
-  - {id: 37, name: PlaySpecialIdle, vtable: 0x00541350, process: 0x002d42c0}
+  - {id: 37, name: PlaySpecialIdle, vtable: 0x00541350, process: 0x002d42c0, bindings: [TacticBossScenarioD], calls: 1, scripts: [level82_chapter5.lua]}
   - {id: 38, name: PlayGenAnim, vtable: 0x005412f0, process: 0x002d47d0, bindings: [GoalPlayGenAnim], calls: 4, scripts: [level5_chapter3.lua, level62_hurricanes.lua, level95_flashhead.lua, level95_flashrage.lua]}
   - {id: 39, name: JoinScene, vtable: 0x005422b0, process: 0x002e5010, bindings: [GoalJoinScene]}
   - {id: 40, name: JoinFixedScene, vtable: 0x00542250, process: 0x002e52c8, bindings: [GoalJoinFixedScene], calls: 2, scripts: [global.lua, level60.lua]}
   - {id: 41, name: JoinCinematic, vtable: 0x005421f0, process: 0x002e5618, bindings: [GoalJoinCinematic], calls: 22, scripts: [global.lua, level14_dirtycop.lua, level14_jsb.lua, level55_party.lua, level55_punkfight.lua, level60.lua], meaning: "Join a cinematic scene"}
   - {id: 42, name: JoinAnimation, vtable: 0x00542190, process: 0x002e5898, bindings: [GoalJoinAnimation], calls: 2, scripts: [global.lua, level60.lua]}
   - {id: 43, name: GuardFlag, vtable: 0x0053fe50, process: 0x002b7c18, event: 0x002b7bc0, bindings: [GoalGuardFlag], calls: 14, scripts: [level14.lua, level3_street.lua, level55_party.lua, level55_punkfight.lua]}
-  - {id: 44, name: GetItem, vtable: 0x00541ef0, process: 0x002dc9f8, bindings: [GoalGetItem], calls: 5, scripts: [caps.lua, level31_reddevil.lua]}
+  - {id: 44, name: GetItem, vtable: 0x00541ef0, process: 0x002dc9f8, bindings: [GoalAvoidEnemies, GoalGetItem, GoalManWeaponPile, GoalObjectThrower], calls: 25, scripts: [caps.lua, level31_reddevil.lua, level52_chapter1.lua, level64_rogues.lua, level81_brawl.lua, level84_final.lua]}
   - {id: 45, name: DestroyItem, vtable: 0x00541e90, process: 0x002dd210}
   - {id: 46, name: DestroyCar, vtable: 0x00541dd0, process: 0x002dde50}
-  - {id: 47, name: VandalizeItem, vtable: 0x00541e30, process: 0x002dd720}
+  - {id: 47, name: VandalizeItem, vtable: 0x00541e30, process: 0x002dd720, bindings: [GoalFollowFormation], calls: 1, scripts: [level11_chapter1.lua]}
   - {id: 48, name: TrackHuman, vtable: 0x00541d10, process: 0x002df3c0, bindings: [GoalTrackHuman], calls: 1, scripts: [level99_combat.lua], meaning: "Track a human ([formations](../research/ai.md#formations))"}
   - {id: 49, name: FollowObject, vtable: 0x00541cb0, process: 0x002df908, bindings: [GoalFollowObject], calls: 4, scripts: [level51_chapter9.lua, level81_chase.lua]}
   - {id: 50, name: FollowPlayer, vtable: 0x00541d70, process: 0x002de7c0, bindings: [GoalFollowPlayer, HuSetArrested], calls: 63, scripts: ["36763710", global.lua, level101.lua, level102.lua, level103.lua, level104.lua]}
-  - {id: 51, name: FollowFormation, vtable: 0x00541c50, process: 0x002e0088, bindings: [GoalFollowFormation, HuSetWarChief, WCIssueCommand], calls: 49, scripts: ["36763710", brawl.lua, level11.lua, level11_chapter1.lua, level11_chapter6.lua, level31_gclub.lua]}
+  - {id: 51, name: FollowFormation, vtable: 0x00541c50, process: 0x002e0088, bindings: [GoalAvoidEnemies, GoalFollowFormation, HuSetWarChief, WCIssueCommand], calls: 53, scripts: ["36763710", brawl.lua, caps.lua, level11.lua, level11_chapter1.lua, level11_chapter6.lua]}
   - {id: 52, name: FollowAndAttack, vtable: 0x005405d0, process: 0x002bc198}
   - {id: 53, name: FollowAndDefend, vtable: 0x00540570, process: 0x002bd808}
   - {id: 54, name: HoldPosition, vtable: 0x00540510, process: 0x002be818, bindings: [GoalHoldPosition], calls: 1, scripts: [level31_reddevil.lua], meaning: "Hold a position ([tactics](../research/ai.md#tactics))"}
@@ -77,7 +77,7 @@ entries:
   - {id: 62, name: StandIdle, vtable: 0x00541230, process: 0x002d4a80, bindings: [GoalStandIdle]}
   - {id: 63, name: LeftTurf, vtable: 0x00542a60, process: 0x002f8e70}
   - {id: 64, name: CopperGuard, vtable: 0x00540bd0, process: 0x002c0a10, event: 0x002c0bc8, bindings: [GoalCopperGuard]}
-  - {id: 65, name: FindEnemy, vtable: 0x00540a50, process: 0x002c0748, bindings: [GoalMelee], calls: 2, scripts: [level87_chap3_shanty.lua], meaning: "Under Melee: restarts the fight while the target is valid ([AI](../research/ai.md#find-enemy))"}
+  - {id: 65, name: FindEnemy, vtable: 0x00540a50, process: 0x002c0748, bindings: [GangCanFlee, GoalMelee, TacticBossScenarioE, TacticBossScenarioF, TacticBossScenarioG, TacticBossScenarioH, TacticPathScout], calls: 30, scripts: [level14.lua, level2_clinic.lua, level2_clubhouse.lua, level31_birdie.lua, level52_chapter1.lua, level62_boppers.lua], meaning: "Under Melee: restarts the fight while the target is valid ([AI](../research/ai.md#find-enemy))"}
   - {id: 66, name: CopperPatrol, vtable: 0x00540b70, process: 0x002c11d8, bindings: [GoalCopperPatrol], calls: 4, scripts: ["36763710", level52.lua]}
   - {id: 67, name: GeneralParlay, vtable: 0x00541890, process: 0x002cb5d0, bindings: [GoalStartParlay]}
   - {id: 68, name: PedLogicPath, vtable: 0x0053f970, process: 0x002a62d8, bindings: [GoalPedestrianPath]}
@@ -96,31 +96,31 @@ entries:
   - {id: 84, name: Riot, vtable: 0x005414d0, process: 0x002d1c38, bindings: [GoalRiot], calls: 12, scripts: [level31.lua, level31_streets.lua, level34.lua, level34_gate.lua, level34_riot.lua, level82_chapter2.lua]}
   - {id: 85, name: CopperRespond, vtable: 0x00540b10, process: 0x002c0dd8, bindings: [GoalCopperRespond]}
   - {id: 86, name: CopperGuardArrested, vtable: 0x00540ab0, process: 0x002bff08}
-  - {id: 87, name: AddressPerson, vtable: 0x00541830, process: 0x002cc588, bindings: [GoalAddressPerson], calls: 15, scripts: [level2_clinic.lua, level54_alley.lua, level83_c5_apartment.lua, level86.lua, level87_chap1_tutorial.lua, level95_homeless.lua], meaning: "Walk up to a human and talk ([GoalAddressPerson](../research/ai.md#address-person))"}
+  - {id: 87, name: AddressPerson, vtable: 0x00541830, process: 0x002cc588, bindings: [GoalAddressPerson, GoalCallPolice], calls: 17, scripts: [level14.lua, level2_clinic.lua, level54_alley.lua, level82_chapter2.lua, level83_c5_apartment.lua, level86.lua], meaning: "Walk up to a human and talk ([GoalAddressPerson](../research/ai.md#address-person))"}
   - {id: 88, name: Hide, vtable: 0x005417d0, process: 0x002cc990}
   - {id: 89, name: ArrestHuman, vtable: 0x005409f0, process: 0x002c1050, bindings: [GoalArrestHuman], calls: 1, scripts: [run4life.lua]}
   - {id: 90, name: Tag, vtable: 0x00541770, process: 0x002cd258, bindings: [GoalTag, GoalTagEx], calls: 6, scripts: [level3_comp.lua, level86.lua, snuff.lua, tagbt.lua]}
-  - {id: 91, name: Destroy, vtable: 0x00541710, process: 0x002cdbc0}
+  - {id: 91, name: Destroy, vtable: 0x00541710, process: 0x002cdbc0, bindings: [TacticVandalizeCars], calls: 2, scripts: [level86.lua]}
   - {id: 92, name: Steal, vtable: 0x005416b0, process: 0x002ce5c8}
-  - {id: 93, name: ThrowObject, vtable: 0x005415f0, process: 0x002cf690, bindings: [GoalThrowObject], calls: 3, scripts: [level34_riot.lua, level87_chap4_street2.lua, level95_homeless.lua]}
-  - {id: 94, name: Investigate, vtable: 0x00541590, process: 0x002d0100}
-  - {id: 95, name: SaveHuman, vtable: 0x0053fd30, process: 0x002b8ad8}
+  - {id: 93, name: ThrowObject, vtable: 0x005415f0, process: 0x002cf690, bindings: [GoalThrowObject, TacticBossScenarioG], calls: 4, scripts: [level34_riot.lua, level87_chap4_street2.lua, level93_chapter6.lua, level95_homeless.lua]}
+  - {id: 94, name: Investigate, vtable: 0x00541590, process: 0x002d0100, bindings: [GangSetReactToViolence, TacticPathScout], calls: 9, scripts: [level14.lua, level20_marketplace.lua, level82_chapter4.lua, level9.lua]}
+  - {id: 95, name: SaveHuman, vtable: 0x0053fd30, process: 0x002b8ad8, bindings: [GangCanSaveAllys], calls: 15, scripts: [level31_streets.lua, level9.lua, level9_chap1_radio.lua, level9_chap2_tags.lua, level9_chap3_escape.lua]}
   - {id: 96, name: ObjectPile, vtable: 0x0053faf0, process: 0x002bb010}
-  - {id: 99, name: TauntPlayer, vtable: 0x00541530, process: 0x002d0b00}
+  - {id: 99, name: TauntPlayer, vtable: 0x00541530, process: 0x002d0b00, bindings: [BrHasEnemies], calls: 8, scripts: [level14_dirtycop.lua, level14_jsb.lua, level20_marketplace.lua, level95_coney.lua]}
   - {id: 100, name: HTLDefense, vtable: 0x00540e70, process: 0x002c8ff8}
   - {id: 101, name: HTLDefenseFight, vtable: 0x00540e10, process: 0x002c9708}
   - {id: 102, name: HTLOffense, vtable: 0x00540d50, process: 0x002c9f60}
   - {id: 103, name: HTLOffenseFight, vtable: 0x00540cf0, process: 0x002ca3e8}
   - {id: 104, name: HTLGrabbing, vtable: 0x00540db0, process: 0x002caea8}
   - {id: 105, name: Pedestrian, vtable: 0x0053f670, process: 0x002ab4b8, bindings: [FlagNetTraverse], calls: 60, scripts: ["3ecd5271", ecd1192f, global.lua, level11.lua, level11_chapter1.lua, level11_chapter5.lua], meaning: "A pedestrian on the flag network (`FlagNetTraverse`)"}
-  - {id: 107, name: PedReaction, vtable: 0x0053f6d0, process: 0x002aa760, meaning: "A civilian's reaction to the player, pushed by the civilian think"}
+  - {id: 107, name: PedReaction, vtable: 0x0053f6d0, process: 0x002aa760, bindings: [BrSetPlayerResponse, GangCanFlee, GangSetReactToViolence, GoalPeddler], calls: 31, scripts: [level11_chapter5.lua, level20_mainstreet.lua, level20_marketplace.lua, level2_clinic.lua, level2_clubhouse.lua, level52_chapter1.lua], meaning: "A civilian's reaction to the player, pushed by the civilian think"}
   - {id: 108, name: PedReactNoise, vtable: 0x0053f730, process: 0x002a9ec0}
-  - {id: 109, name: CallPolice, vtable: 0x0053f7f0, process: 0x002a83f8, bindings: [GoalCallPolice], calls: 2, scripts: [level14.lua, level82_chapter2.lua]}
-  - {id: 110, name: CallGang, vtable: 0x00541110, process: 0x002d6638, bindings: [GoalCallGang], calls: 2, scripts: [level20_mainstreet.lua]}
-  - {id: 111, name: Scout, vtable: 0x005410b0, process: 0x002d73b8}
-  - {id: 112, name: PathScout, vtable: 0x00541050, process: 0x002d80c8}
-  - {id: 113, name: Interact, vtable: 0x0053f790, process: 0x002a9508}
-  - {id: 114, name: Hostile, vtable: 0x00541170, process: 0x002d58b8, meaning: "A civilian turning hostile, pushed by the civilian think"}
+  - {id: 109, name: CallPolice, vtable: 0x0053f7f0, process: 0x002a83f8, bindings: [GangSetReactToViolence, GoalCallPolice], calls: 5, scripts: [level14.lua, level20_marketplace.lua, level82_chapter2.lua]}
+  - {id: 110, name: CallGang, vtable: 0x00541110, process: 0x002d6638, bindings: [GangSetReactToViolence, GoalCallGang, TacticPathScout], calls: 11, scripts: [level14.lua, level20_mainstreet.lua, level20_marketplace.lua, level82_chapter4.lua, level9.lua]}
+  - {id: 111, name: Scout, vtable: 0x005410b0, process: 0x002d73b8, bindings: [TacticPathScout], calls: 6, scripts: [level14.lua, level82_chapter4.lua, level9.lua]}
+  - {id: 112, name: PathScout, vtable: 0x00541050, process: 0x002d80c8, bindings: [TacticPathScout], calls: 6, scripts: [level14.lua, level82_chapter4.lua, level9.lua]}
+  - {id: 113, name: Interact, vtable: 0x0053f790, process: 0x002a9508, bindings: [CfgPedInteractDelay], calls: 1, scripts: [level20.lua]}
+  - {id: 114, name: Hostile, vtable: 0x00541170, process: 0x002d58b8, bindings: [BrSetPlayerResponse], calls: 3, scripts: [level11_chapter5.lua, level92_chapter2.lua], meaning: "A civilian turning hostile, pushed by the civilian think"}
   - {id: 115, name: Patrol, vtable: 0x00540990, process: 0x002c1858, bindings: [FlagNetTraverse], calls: 60, scripts: ["3ecd5271", ecd1192f, global.lua, level11.lua, level11_chapter1.lua, level11_chapter5.lua], meaning: "A patrol on the flag network (`FlagNetTraverse`)"}
   - {id: 116, name: Respond, vtable: 0x005408d0, process: 0x002c3548, bindings: [GangRespond, GoalCopRespond], calls: 3, scripts: [level20_mainstreet.lua, level20_temple.lua]}
   - {id: 117, name: ProcessBreakAndEnter, vtable: 0x00540930, process: 0x002c2430}
@@ -131,35 +131,35 @@ entries:
   - {id: 122, name: LeaveArea, vtable: 0x00540750, process: 0x002c5160}
   - {id: 123, name: CopInteract, vtable: 0x00540690, process: 0x002c61f8}
   - {id: 124, name: IssueWarning, vtable: 0x00540630, process: 0x002c69b0}
-  - {id: 125, name: Domination, vtable: 0x0053fc10, process: 0x002b98f0}
+  - {id: 125, name: Domination, vtable: 0x0053fc10, process: 0x002b98f0, bindings: [TacticDomination], calls: 10, scripts: [kinghill.lua, level92_chapter1.lua, royal.lua]}
   - {id: 126, name: Ring, vtable: 0x0053fbb0, process: 0x002ba118}
-  - {id: 127, name: StandGround, vtable: 0x0053fb50, process: 0x002ba878}
+  - {id: 127, name: StandGround, vtable: 0x0053fb50, process: 0x002ba878, bindings: [TacticStandGround], calls: 1, scripts: [level11_chapter6.lua]}
   - {id: 128, name: Dealer, vtable: 0x00540c90, process: 0x002c7fd8, bindings: [GoalDealer], calls: 27, scripts: [level11.lua, level11_chapter1.lua, level14.lua, level2.lua, level20.lua, level3.lua], meaning: "A dealer selling to the player ([GoalDealer](../research/ai.md#dealer))"}
   - {id: 129, name: DealerReaction, vtable: 0x00540c30, process: 0x002c8af0}
   - {id: 130, name: Shopkeeper, vtable: 0x005423d0, process: 0x002e6668, bindings: [GoalShopkeeper], calls: 5, scripts: [level20_mainstreet.lua, level20_temple.lua, level93_chapter1.lua, level95_coney.lua]}
   - {id: 131, name: WarriorVandalSteal, vtable: 0x005404b0, process: 0x002bf748}
-  - {id: 132, name: BigBrawler, vtable: 0x005429a0, process: 0x002e8f78, bindings: [GoalBigBrawler]}
-  - {id: 133, name: BigFighter, vtable: 0x00542940, process: 0x002eabc8, bindings: [GoalBigFighter], meaning: "A big fighter"}
-  - {id: 134, name: BigFighterA, vtable: 0x005428e0, process: 0x002ec780}
-  - {id: 135, name: BigThrower, vtable: 0x00542880, process: 0x002ed718, bindings: [GoalBigThrower]}
-  - {id: 136, name: BigDefender, vtable: 0x005424f0, process: 0x002f6a80}
-  - {id: 137, name: BigBull, vtable: 0x00542490, process: 0x002f7348}
-  - {id: 138, name: BigLedgeThrower, vtable: 0x00542820, process: 0x002ee7b0, bindings: [GoalBigLedgeThrower], calls: 7, scripts: [level3_balcony.lua]}
-  - {id: 140, name: StationaryThrower, vtable: 0x005427c0, process: 0x002ef2c0, bindings: [GoalStationaryThrower], calls: 8, scripts: [level11_chapter2.lua, level11_chapter4.lua, level11_chapter5.lua, level31_reddevil.lua, level34_riot.lua]}
-  - {id: 141, name: StationaryShooter, vtable: 0x00542760, process: 0x002f0ec0}
-  - {id: 142, name: StationaryShooterA, vtable: 0x005426e8, process: 0x002f28b8}
-  - {id: 143, name: StationaryShooterB, vtable: 0x00542610, process: 0x002f52e8}
-  - {id: 144, name: Fatigued, vtable: 0x00542a00, process: 0x002e7f50}
-  - {id: 145, name: Mace, vtable: 0x005425b0, process: 0x002f5d50}
-  - {id: 146, name: Grabber, vtable: 0x00542550, process: 0x002f63b8}
+  - {id: 132, name: BigBrawler, vtable: 0x005429a0, process: 0x002e8f78, bindings: [GoalBigBrawler, TacticBossScenarioA], calls: 3, scripts: [level5_chapter3.lua]}
+  - {id: 133, name: BigFighter, vtable: 0x00542940, process: 0x002eabc8, bindings: [GoalBigFighter, TacticBossScenarioC, TacticBossScenarioG], calls: 2, scripts: [level11_chapter6.lua, level93_chapter6.lua], meaning: "A big fighter"}
+  - {id: 134, name: BigFighterA, vtable: 0x005428e0, process: 0x002ec780, bindings: [TacticBossScenarioH], calls: 1, scripts: [level81_chatterbox.lua]}
+  - {id: 135, name: BigThrower, vtable: 0x00542880, process: 0x002ed718, bindings: [GoalBigThrower, TacticBossScenarioA], calls: 3, scripts: [level5_chapter3.lua]}
+  - {id: 136, name: BigDefender, vtable: 0x005424f0, process: 0x002f6a80, bindings: [TacticBossScenarioD], calls: 1, scripts: [level82_chapter5.lua]}
+  - {id: 137, name: BigBull, vtable: 0x00542490, process: 0x002f7348, bindings: [TacticBossScenarioD], calls: 1, scripts: [level82_chapter5.lua]}
+  - {id: 138, name: BigLedgeThrower, vtable: 0x00542820, process: 0x002ee7b0, bindings: [GoalBigLedgeThrower, TacticBossScenarioG, TacticBossScenarioH], calls: 9, scripts: [level3_balcony.lua, level81_chatterbox.lua, level93_chapter6.lua]}
+  - {id: 140, name: StationaryThrower, vtable: 0x005427c0, process: 0x002ef2c0, bindings: [GoalStationaryThrower, TacticBossScenarioA], calls: 11, scripts: [level11_chapter2.lua, level11_chapter4.lua, level11_chapter5.lua, level31_reddevil.lua, level34_riot.lua, level5_chapter3.lua]}
+  - {id: 141, name: StationaryShooter, vtable: 0x00542760, process: 0x002f0ec0, bindings: [TacticBossScenarioB], calls: 2, scripts: [level55.lua, level55_lizziesattack.lua]}
+  - {id: 142, name: StationaryShooterA, vtable: 0x005426e8, process: 0x002f28b8, bindings: [GoalLutherShooter, TacticBossScenarioE], calls: 4, scripts: [level64_riffs.lua, level84_final.lua]}
+  - {id: 143, name: StationaryShooterB, vtable: 0x00542610, process: 0x002f52e8, bindings: [TacticBossScenarioF], calls: 2, scripts: [level31_birdie.lua]}
+  - {id: 144, name: Fatigued, vtable: 0x00542a00, process: 0x002e7f50, bindings: [TacticBossScenarioA], calls: 3, scripts: [level5_chapter3.lua]}
+  - {id: 145, name: Mace, vtable: 0x005425b0, process: 0x002f5d50, bindings: [TacticBossScenarioC], calls: 1, scripts: [level11_chapter6.lua]}
+  - {id: 146, name: Grabber, vtable: 0x00542550, process: 0x002f63b8, bindings: [TacticBossScenarioD], calls: 1, scripts: [level82_chapter5.lua]}
   - {id: 147, name: BossChatter, vtable: 0x0053f430, process: 0x002a0fb8}
   - {id: 148, name: BossLizzies, vtable: 0x0053f550, process: 0x0029fe18, bindings: [GoalBossLizzies]}
   - {id: 149, name: BossLuther, vtable: 0x0053f4f0, process: 0x002a0b00}
   - {id: 150, name: BossBigMo, vtable: 0x0053f490, process: 0x002a0b98}
   - {id: 152, name: DevilRun, vtable: 0x00541ad0, process: 0x002e2230, bindings: [GoalDevilRun], calls: 33, scripts: [level3_chase.lua, level54.lua, level54_alley.lua, level54_park.lua, level54_streets.lua, run4life.lua]}
-  - {id: 153, name: ReactNoise, vtable: 0x00540ff0, process: 0x002d8630}
+  - {id: 153, name: ReactNoise, vtable: 0x00540ff0, process: 0x002d8630, bindings: [GangSetReactToViolence], calls: 3, scripts: [level20_marketplace.lua]}
   - {id: 154, name: Mark, vtable: 0x00540f90, process: 0x002d8ee0, bindings: [GoalMark], calls: 4, scripts: [level20_marketplace.lua]}
   - {id: 155, name: Backoff, vtable: 0x00540f30, process: 0x002d93a0, bindings: [GoalBackoff], calls: 22, scripts: [level11_chapter6.lua, level20_mainstreet.lua, level3_balcony.lua, level51_chapter2a.lua, level5_chapter1.lua, level5_chapter3.lua], meaning: "Back off from a target"}
-  - {id: 156, name: HideAndSeek, vtable: 0x00542430, process: 0x002f8468}
+  - {id: 156, name: HideAndSeek, vtable: 0x00542430, process: 0x002f8468, bindings: [TacticBossScenarioG], calls: 1, scripts: [level93_chapter6.lua]}
   - {id: 157, name: LutherShooter, vtable: 0x00542670, process: 0x002f3600, bindings: [GoalLutherShooter], calls: 2, scripts: [level64_riffs.lua]}
   - {id: 158, name: Boxer, vtable: 0x00540ed0, process: 0x002d98f8, bindings: [GoalBoxer], calls: 6, scripts: [level95.lua, level95_clubhouse.lua]}

@@ -73,7 +73,7 @@ entries:
   - {name: part_rotate_vent, index: 117, kind: "particle system", flags: 0x0010, init: 0x003dab08}
   - {name: part_s_fire, index: 118, kind: "particle system", flags: 0x0010, init: 0x003ca050, sheet: part_fire, rect: 0, size: [40, 40], image: particles/part_s_fire.png}
   - {name: part_s_shack_dust_puff, index: 119, kind: "particle system", flags: 0x0010, init: 0x003dac68, spawns: [sub_shack_puff]}
-  - {name: part_s_subway_sparks, index: 120, kind: "particle system", flags: 0x0010, init: 0x003db298, sheet: part_page1, rect: 54, size: [32, 32], image: particles/part_s_subway_sparks.png, evidence: speculative, meaning: "Sprite to recheck: the traced rectangle 54 shows a grey box, not this effect"}
+  - {name: part_s_subway_sparks, index: 120, kind: "particle system", flags: 0x0010, init: 0x003db298, sheet: part_page1, rect: 54, size: [32, 32], meaning: "Sprite to recheck: the traced rectangle 54 shows a grey box, not this effect", image: particles/part_s_subway_sparks.png, evidence: speculative}
   - {name: part_small_ac, index: 121, kind: "particle system", flags: 0x0010, init: 0x003dabb8}
   - {name: part_small_light, index: 122, kind: "particle system", flags: 0x0010, init: 0x003e81e0, calls: 6, scripts: [level14.lua, level81.lua]}
   - {name: part_smaller_light, index: 123, kind: "particle system", flags: 0x0010, init: 0x003e8e10}
@@ -186,11 +186,11 @@ entries:
   - {name: sub_wood_splinter, index: 257, kind: "particle system", flags: 0x0010, init: 0x00407d78, spawns: [wood_splinter_bit]}
   - {name: subway_lensflare, index: 258, kind: "particle system", flags: 0x0010, init: 0x003e8890, sheet: cf4c87d3, rect: 0, size: [102, 50], image: particles/subway_lensflare.png}
   - {name: subway_loop, index: 260, kind: "particle system", flags: 0x0010, init: 0x003d9698}
-  - {name: subway_spark, index: 261, kind: "particle system", flags: 0x0010, init: 0x003dadc0, sheet: part_page1, rect: 54, size: [32, 32], image: particles/subway_spark.png, evidence: speculative, meaning: "Sprite to recheck: the traced rectangle 54 shows a grey box, not this effect"}
+  - {name: subway_spark, index: 261, kind: "particle system", flags: 0x0010, init: 0x003dadc0, sheet: part_page1, rect: 54, size: [32, 32], meaning: "Sprite to recheck: the traced rectangle 54 shows a grey box, not this effect", image: particles/subway_spark.png, evidence: speculative}
   - {name: sweat_drop, index: 263, kind: "particle system", flags: 0x0010, init: 0x003b0cd0}
   - {name: sweat_mist, index: 264, kind: "particle system", flags: 0x0010, init: 0x003b0990}
   - {name: sweat_spray, index: 265, kind: "particle system", flags: 0x0010, init: 0x003b07f0}
-  - {name: urine_spray, index: 267, kind: "particle system", flags: 0x0010, init: 0x003dd650, sheet: part_page1, rect: 54, size: [32, 32], image: particles/urine_spray.png, evidence: speculative, meaning: "Sprite to recheck: the traced rectangle 54 shows a grey box, not this effect"}
+  - {name: urine_spray, index: 267, kind: "particle system", flags: 0x0010, init: 0x003dd650, sheet: part_page1, rect: 54, size: [32, 32], meaning: "Sprite to recheck: the traced rectangle 54 shows a grey box, not this effect", image: particles/urine_spray.png, evidence: speculative}
   - {name: Wind_Manager, index: 268, kind: "particle system", flags: 0x0010, init: 0x004071b8}
   - {name: wood_splinter_bit, index: 269, kind: "particle system", flags: 0x0010, init: 0x004077b8}
   - {name: dyn_animwave, index: 9, kind: "object behaviour", flags: 0x0008, init: 0x003f0758}

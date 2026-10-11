@@ -310,3 +310,20 @@ def test_names_finds_names_inside_wad_entries_without_an_elf(tmp_path: Path, rep
 def test_too_many_paths_is_exit_2(tmp_path: Path, repo: Path, capsys: pytest.CaptureFixture[str]) -> None:
     assert main(["wad", "names", "a", "b", "c"]) == 2
     assert "too many arguments" in capsys.readouterr().err
+
+
+def test_streamed_world_names_apply_the_loader_formats_to_level_stems() -> None:
+    names = ["level7s_sec.wld", "level7s_sec.mem", "level7s_ms3.sec", "level12d_ms0.sec"]
+    found = wad.streamed_world_names([], [wad.name_hash(wad.NAME_PREFIX + name) for name in names])
+    assert sorted(found.values()) == sorted(names)
+
+
+def test_streamed_world_names_try_the_given_stems_and_ignore_other_hashes() -> None:
+    hashes = [wad.name_hash(wad.NAME_PREFIX + "arena_sec.wld"), 0x12345678]
+    assert wad.streamed_world_names(["arena"], hashes) == {hashes[0]: "arena_sec.wld"}
+    assert wad.streamed_world_names([], hashes) == {}
+
+
+def test_world_file_pattern_matches_only_a_worlds_own_files() -> None:
+    assert all(wad.WORLD_FILE.search(name) for name in ("a_ms12.sec", "a_sec.wld", "A_SEC.MEM"))
+    assert not any(wad.WORLD_FILE.search(name) for name in ("a.scn", "a_sec.lua", "ms12.sec"))

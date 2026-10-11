@@ -1823,7 +1823,7 @@ entries:
     drop_chance: 50
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [Spectator03, Spectator13, Spectator43, SewerTurnbull1, PoolAC01, TBF4Luiet, TBF101, TBStreet101]
-    levels: [31, 51]
+    levels: [31, 51, 108, 112]
     image: characters/turn_lt.png
   - id: 101
     model: turn_so1
@@ -1842,7 +1842,7 @@ entries:
     drop_chance: 5
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [Spectator11, Spectator09, Spectator01, Guitar1, Guitar2, TBStealth04, Spectator49, ArrestedBull01]
-    levels: [31, 51]
+    levels: [31, 51, 104, 105, 108, 112]
     image: characters/turn_so1.png
   - id: 102
     model: turn_so2
@@ -1861,7 +1861,7 @@ entries:
     drop_chance: 5
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [Spectator02, Spectator27, Spectator17, Spectator07, Spectator47, Drummer, Spectator12, Spectator22]
-    levels: [31, 51]
+    levels: [31, 51, 104, 105, 108, 112]
     image: characters/turn_so2.png
   - id: 103
     model: turn_so3
@@ -1880,7 +1880,7 @@ entries:
     drop_chance: 5
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [Spectator10, Spectator44, Spectator50, Spectator40, Spectator14, Spectator04, PlatformBull03, SewerTurnbull3]
-    levels: [31, 51]
+    levels: [31, 51, 104, 108, 112]
     image: characters/turn_so3.png
   - id: 104
     model: turn_so4
@@ -1900,7 +1900,7 @@ entries:
     drop_chance: 5
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [Spectator06, Spectator08, Spectator26, Spectator28, Spectator46, Spectator16, Spectator48, SewerTurnbull2]
-    levels: [31]
+    levels: [31, 104, 108, 112]
     image: characters/turn_so4.png
   - id: 105
     model: turn_so5
@@ -1920,7 +1920,7 @@ entries:
     drop_chance: 5
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [Spectator05, Spectator15, Spectator45, "1DevilAC03", "2AC02", "2AC08"]
-    levels: [31]
+    levels: [31, 104, 108, 112]
     image: characters/turn_so5.png
   - id: 106
     model: sava_bo
@@ -1941,7 +1941,7 @@ entries:
     drop_chance: 0
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [Ghost, Spectator21]
-    levels: [20, 61]
+    levels: [20, 61, 114]
     image: characters/sava_bo.png
   - id: 107
     model: sava_lt
@@ -2006,7 +2006,7 @@ entries:
     weapon: dyn_hunter
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [Spectator20, Ling, Ting]
-    levels: [61]
+    levels: [61, 114]
     image: characters/sava_lt2.png
   - id: 110
     model: sava_so1a
@@ -2026,7 +2026,7 @@ entries:
     drop_chance: 5
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [GhostBackup4, Spectator40, StoreHuns02, SceneHun2, VandalHuns102, MarketEnd103, ChaseHun101, ChaseHun108]
-    levels: [20, 34, 61]
+    levels: [20, 34, 61, 114]
     image: characters/sava_so1a.png
   - id: 111
     model: sava_so1b
@@ -2064,7 +2064,7 @@ entries:
     drop_chance: 5
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [Spectator11, ShadowHun03, ShadowHun07, StallHuns2, MarketEnd104, ChaseHun103, ChaseHun106, ChaseHun112]
-    levels: [20]
+    levels: [20, 114]
     image: characters/sava_so2a.png
   - id: 113
     model: sava_so2b
@@ -2083,7 +2083,7 @@ entries:
     drop_chance: 5
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [GhostBackup5, Spectator27, Spectator35, Spectator50, ShadowHun04, StallHuns3, ChaseHun104, ChaseHun107]
-    levels: [20]
+    levels: [20, 114]
     image: characters/sava_so2b.png
   - id: 114
     model: civl_monk1
@@ -2137,6 +2137,7 @@ entries:
     drop_chance: 5
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [Spectator28]
+    levels: [114]
     image: characters/civl_monk_bo1.png
   - id: 117
     model: civl_monk_bo2
@@ -2155,6 +2156,7 @@ entries:
     drop_chance: 5
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [Spectator18]
+    levels: [114]
     image: characters/civl_monk_bo2.png
   - id: 118
     model: civl_ct_ma1
@@ -2586,7 +2588,7 @@ entries:
     drop_chance: 5
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [HiHat1, HiHat2, Molotav1, Molotav2, Molotav3, HHA01, HHA02, HHA03]
-    levels: [3, 61, 81]
+    levels: [3, 61, 81, 107]
     image: characters/hiha_so_va1.png
   - id: 139
     model: hiha_so_va2
@@ -4785,7 +4787,7 @@ entries:
     weapon: dyn_baton
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [Darryl, RumbleCop, RumbleCop01, RumbleCop05, RumbleCop07, RumbleCop03, RumbleCop02, RumbleCop04]
-    levels: [52, 54, 80, 82]
+    levels: [52, 54, 80, 82, 136, 137]
     image: characters/cops_va1.png
   - id: 254
     model: cops_va2
@@ -5119,6 +5121,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 0.964, jog: 0.964, run: 2.723, sprint: 2.723}
     script_names: [Crowd01]
+    levels: [102]
     image: characters/civl_bm_va1.png
   - id: 271
     model: civl_bm_va2
@@ -5139,7 +5142,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 0.742, jog: 0.742, run: 1.59, sprint: 1.59}
     script_names: [Crowd02, Crowd01, Crowd03, Crowd04, Crowd05, Crowd06, Spectator20, Bum02]
-    levels: [99]
+    levels: [99, 102, 103]
     image: characters/civl_bm_va2.png
   - id: 272
     model: civl_bm_vb1
@@ -5160,7 +5163,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 0.964, jog: 0.964, run: 2.723, sprint: 2.723}
     script_names: [Bum01, Bum04, Crowd03, TrainBum1, Bum09, "Pistol Pete", Steve, Bob]
-    levels: [20, 55, 82, 87, 92, 99]
+    levels: [20, 55, 82, 87, 92, 99, 102]
     image: characters/civl_bm_vb1.png
   - id: 273
     model: civl_bm_vb2
@@ -5181,7 +5184,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 0.742, jog: 0.742, run: 1.59, sprint: 1.59}
     script_names: [Bum02, Bum05, Bum08, Crowd04, SewerBum101, SewerBum301, Bum03, Bum07]
-    levels: [5, 20, 31, 51, 52, 54, 82, 92, 95, 99]
+    levels: [5, 20, 31, 51, 52, 54, 82, 92, 95, 99, 102]
     image: characters/civl_bm_vb2.png
   - id: 274
     model: civl_bm_vb3
@@ -5202,7 +5205,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 0.964, jog: 0.964, run: 2.723, sprint: 2.723}
     script_names: [ChaseBum01, Crowd05, Bum101, Bum104, Bum201, Bum06, SewerBum102, SewerBum302]
-    levels: [11, 20, 31, 82, 87, 92, 99]
+    levels: [11, 20, 31, 82, 87, 92, 99, 102]
     image: characters/civl_bm_vb3.png
   - id: 275
     model: civl_bm_vb4
@@ -5223,7 +5226,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 0.742, jog: 0.742, run: 1.59, sprint: 1.59}
     script_names: [Bum01, Bum03, Crowd06, IB01, Bum06, CivF2, Bum101, Bum04]
-    levels: [5, 14, 31, 51, 52, 54, 80, 93, 95, 99]
+    levels: [5, 14, 31, 51, 52, 54, 80, 93, 95, 99, 102]
     image: characters/civl_bm_vb4.png
   - id: 276
     model: civl_bm_vb5
@@ -5244,7 +5247,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 0.964, jog: 0.964, run: 2.723, sprint: 2.723}
     script_names: [ChaseBum03, Crowd01, SewerBum103, SewerBum303, Bum05, TrainBum02, Bum2, AB101]
-    levels: [20, 31, 55, 80, 83, 87, 99]
+    levels: [20, 31, 55, 80, 83, 87, 99, 102]
     image: characters/civl_bm_vb5.png
   - id: 277
     model: civl_bm_vb6
@@ -5265,7 +5268,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 0.742, jog: 0.742, run: 1.59, sprint: 1.59}
     script_names: [Crowd02, Bum02, CivF3, Bum05, Bum3, Weed]
-    levels: [5, 80, 95]
+    levels: [5, 80, 95, 102]
     image: characters/civl_bm_vb6.png
   - id: 278
     model: civl_bm_vb7
@@ -5286,7 +5289,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 0.964, jog: 0.964, run: 2.723, sprint: 2.723}
     script_names: [Bum01, ChaseBum02, Crowd03, Spectator29, Bum102, Bum103, Bum202, Bum203]
-    levels: [2, 11, 20, 80, 86, 87]
+    levels: [2, 11, 20, 80, 86, 87, 102, 103]
     image: characters/civl_bm_vb7.png
   - id: 279
     model: civl_bm_vb8
@@ -5328,7 +5331,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 0.964, jog: 0.964, run: 2.723, sprint: 2.723}
     script_names: [Crowd04, Bum06]
-    levels: [31]
+    levels: [31, 102]
     image: characters/civl_bm_vb9.png
   - id: 281
     model: civl_bm_vb11
@@ -5349,7 +5352,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 0.742, jog: 0.742, run: 1.59, sprint: 1.59}
     script_names: [Crowd05, SewerBum104, SewerBum304, Bum04]
-    levels: [31]
+    levels: [31, 102]
     image: characters/civl_bm_vb11.png
   - id: 282
     model: civl_bm_va2
@@ -5389,7 +5392,7 @@ entries:
     drop_chance: 5
     speeds: {walk: 0.964, jog: 0.964, run: 2.723, sprint: 2.723}
     script_names: [Crowd06, Bum05, ClinicBum2, StreetBum, SewerBum201, Terry, BumFighter102, BumFighter104]
-    levels: [2, 14, 31, 82]
+    levels: [2, 14, 31, 82, 102]
     image: characters/civl_bm_vb5.png
   - id: 284
     model: civl_bm_vb8
@@ -5591,7 +5594,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [Spectator40, B2MCivil01, B2MCivil03]
-    levels: [11]
+    levels: [11, 103]
     image: characters/civl_hl_b1.png
   - id: 294
     model: civl_hl_b2
@@ -5611,7 +5614,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [C203, B2MCivil05, B2MCivil08]
-    levels: [11]
+    levels: [11, 107, 122]
     image: characters/civl_hl_b2.png
   - id: 295
     model: civl_hl_b3
@@ -5651,7 +5654,7 @@ entries:
     drop_chance: 20
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [Spectator01, Spectator21, BirdieBro]
-    levels: [31]
+    levels: [31, 103]
     image: characters/civl_cw_ma1.png
   - id: 297
     model: civl_cw_ma2
@@ -5711,6 +5714,7 @@ entries:
     drop_chance: 20
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [Spectator15]
+    levels: [103]
     image: characters/civl_cw_mb2.png
   - id: 300
     model: civl_co_lf1
@@ -6021,7 +6025,7 @@ entries:
     drop_chance: 20
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [HotDogGuy, Spectator11, "Hot Dog Guy"]
-    levels: [60, 86, 95]
+    levels: [60, 86, 95, 103]
     image: characters/civl_hd.png
   - id: 316
     model: civl_hl_br1
@@ -6116,7 +6120,7 @@ entries:
     drop_chance: 20
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [C204, Bouncer4504, Bouncer4503, Bouncer4501, Bouncer4502]
-    levels: [11]
+    levels: [11, 107, 122]
     image: characters/civl_hl_br5.png
   - id: 321
     model: civl_gc_bt
@@ -6192,7 +6196,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [B1MCivil09, B1MCivil11, C1CivM, RomanLine03, B1MCivil14, B1MCivil13, PhoneGuy, B4CivFight_10]
-    levels: [3, 11, 62]
+    levels: [3, 11, 62, 110]
     image: characters/civl_hl_ma1.png
   - id: 325
     model: civl_hl_ma2
@@ -6212,7 +6216,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [B1MCivil01, B1MCivil08, B1MCivil12, RomanLine04, RomanLine01, B1MCivil10, B1MCivil07, B4CivFight_03]
-    levels: [3, 11]
+    levels: [3, 11, 110]
     image: characters/civl_hl_ma2.png
   - id: 326
     model: civl_hl_ma3
@@ -6233,7 +6237,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [B3Guy01, B4CivFight_04, B4CivFight_06, B4CivFight_14, B4CivFight_20, B4CivFight_23, B4CivFight_35, B4CivFight_36]
-    levels: [3, 11, 62]
+    levels: [3, 11, 62, 110]
     image: characters/civl_hl_ma3.png
   - id: 327
     model: civl_hl_ma4
@@ -6253,7 +6257,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [B4CivFight_19, Bar405, Line102, Line105, B3Guy03, B3Guy04, B3Guy05, B3Guy06]
-    levels: [11]
+    levels: [11, 110]
     image: characters/civl_hl_ma4.png
   - id: 328
     model: civl_hl_ma5
@@ -6273,7 +6277,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [B4CivFight_30, B4CivFight_31, Bar406, Bar408, Line101, B3Guy02, B3Guy07, B3Guy09]
-    levels: [11]
+    levels: [11, 110]
     image: characters/civl_hl_ma5.png
   - id: 329
     model: civl_hl_fb1
@@ -6462,7 +6466,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.445, jog: 4.857, run: 5.937, sprint: 10.245}
     script_names: [B1FCivil09, B1FCivil11, B1FCivil12, C1CivF, RomanLine02, B1FCivil14, B1FCivil13, B1FCivil01]
-    levels: [3, 11, 62]
+    levels: [3, 11, 62, 110]
     image: characters/civl_hl_fc1.png
   - id: 339
     model: civl_hl_fc2
@@ -6483,7 +6487,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.445, jog: 4.857, run: 5.937, sprint: 10.245}
     script_names: [B1FCivil07, B1FCivil08, B1FCivil10, B4CivFight_01, B4CivFight_05, B4CivFight_17, B4CivFight_22, B4CivFight_26]
-    levels: [3, 11, 60]
+    levels: [3, 11, 60, 110]
     image: characters/civl_hl_fc2.png
   - id: 340
     model: civl_hl_fc3
@@ -6504,7 +6508,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.445, jog: 4.857, run: 5.937, sprint: 10.245}
     script_names: [B4CivFight_15, B4CivFight_27, B4CivFight_33, PartyGirl_05, Ginger]
-    levels: [3, 62]
+    levels: [3, 62, 110]
     image: characters/civl_hl_fc3.png
   - id: 341
     model: civl_hl_fc4
@@ -6525,7 +6529,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.445, jog: 4.857, run: 5.937, sprint: 10.245}
     script_names: [B4CivFight_07, Line104, B4CivFight_01, B4CivFight_02, B4CivFight_11, B4CivFight_15, B4CivFight_17, B4CivFight_22]
-    levels: [3, 11, 60]
+    levels: [3, 11, 60, 110]
     image: characters/civl_hl_fc4.png
   - id: 342
     model: civl_hl_fc5
@@ -6695,7 +6699,7 @@ entries:
     drop_chance: 20
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [Referee, DJ]
-    levels: [62]
+    levels: [62, 101, 129, 130]
     image: characters/civl_hl_dj1.png
   - id: 351
     model: dj
@@ -6971,7 +6975,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [C102, C206, Male04, "The Biz"]
-    levels: [31, 87]
+    levels: [31, 87, 107, 122]
     image: characters/civl_pl_ma6.png
   - id: 365
     model: civl_pl_ma8
@@ -7051,7 +7055,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.445, jog: 4.857, run: 5.937, sprint: 10.245}
     script_names: [C205, Civ_1, Phoney, DinerPed02, IcePed01, BP_02]
-    levels: [54, 83]
+    levels: [54, 83, 107, 122]
     image: characters/civl_bn_fa1.png
   - id: 369
     model: civl_bn_fa2
@@ -7193,6 +7197,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [C104, C108]
+    levels: [107, 122]
     image: characters/civl_bn_ma4.png
   - id: 376
     model: civl_bn_mb1
@@ -7348,7 +7353,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [C103, C106, PartyGuy_05, Civil01, Civil06, Stoop302, Civil05, Civil04]
-    levels: [3, 5]
+    levels: [3, 5, 107, 122]
     image: characters/civl_eh_ma1.png
   - id: 384
     model: civl_eh_ma2
@@ -7471,7 +7476,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.445, jog: 4.857, run: 5.937, sprint: 10.245}
     script_names: [C101, Window3]
-    levels: [2]
+    levels: [2, 107, 122]
     image: characters/civl_tr_fa1.png
   - id: 390
     model: civl_tr_fa2
@@ -7492,7 +7497,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.445, jog: 4.857, run: 5.937, sprint: 10.245}
     script_names: [C107, C208, Girl]
-    levels: [80]
+    levels: [80, 107, 122]
     image: characters/civl_tr_fa2.png
   - id: 391
     model: civl_tr_fa3
@@ -7733,7 +7738,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.445, jog: 4.857, run: 5.937, sprint: 10.245}
     script_names: [C202, MarkCivs04, StorePed01, PharmacyPed01, Sec1Civ101, Sec1Civ201, Sec2Civ101, Sec2Civ201]
-    levels: [20, 61, 86]
+    levels: [20, 61, 86, 107, 122]
     image: characters/civl_ct_fa1.png
   - id: 403
     model: civl_ct_ma1
@@ -7755,7 +7760,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [Civilians01_02, MarkerCiv, MarkCivs03, MarkCivs02, StorePed02, PharmacyPed02, Sec1Civ102, Sec1Civ202]
-    levels: [3, 20, 61, 86]
+    levels: [3, 20, 61, 86, 134]
     image: characters/civl_ct_ma1.png
   - id: 404
     model: civl_ct_fa2
@@ -7796,7 +7801,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [Spectator43, Civilians01_04, Civilians01_03, MarkCivs01, Sec1Civ104, Sec1Civ204, Sec2Civ104, Sec2Civ204]
-    levels: [20]
+    levels: [20, 103, 114, 134]
     image: characters/civl_ct_ma2.png
   - id: 406
     model: civl_ct_fa3
@@ -7817,7 +7822,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.445, jog: 4.857, run: 5.937, sprint: 10.245}
     script_names: [Civilians01_06, Civilians01_05, Right03, BackalleyPed07, Spectator32, Sec1Civ105, Sec1Civ205, Sec2Civ105]
-    levels: [3, 20]
+    levels: [3, 20, 114, 134]
     image: characters/civl_ct_fa3.png
   - id: 407
     model: civl_ct_ma3
@@ -7837,7 +7842,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [Civilians01_08, Civilians01_07, Right02, Spectator42, Sec1Civ106, Sec1Civ206, Sec2Civ206, SceneCiv3]
-    levels: [20]
+    levels: [20, 114, 134]
     image: characters/civl_ct_ma3.png
   - id: 408
     model: civl_ct_fa4
@@ -8036,7 +8041,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [Civilians01_01, Gambler1, Spectator42, Ped01, LiquorOwner, Civilian1, Ape, PoizoCiv]
-    levels: [3, 93, 95, 99]
+    levels: [3, 93, 95, 99, 103, 134]
     image: characters/civl_co_ma1.png
   - id: 418
     model: civl_co_ma2
@@ -8057,7 +8062,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [C201, Gambler3, Ped02, Civilian2]
-    levels: [3, 93]
+    levels: [3, 93, 107, 122]
     image: characters/civl_co_ma2.png
   - id: 419
     model: civl_co_ma3
@@ -8078,6 +8083,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [Spectator41]
+    levels: [103]
     image: characters/civl_co_ma3.png
   - id: 420
     model: civl_co_ma4
@@ -8098,7 +8104,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [C105, C207, Gambler2, PC02, PC03, Civilian1]
-    levels: [82, 93]
+    levels: [82, 93, 107, 122]
     image: characters/civl_co_ma4.png
   - id: 421
     model: civl_co_ma5
@@ -8119,7 +8125,7 @@ entries:
     drop_chance: -1
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [Spectator39, Stalker]
-    levels: [95]
+    levels: [95, 103]
     image: characters/civl_co_ma5.png
   - id: 422
     model: civl_pl_st1
@@ -8742,6 +8748,7 @@ entries:
     drop_chance: 20
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [Spectator27]
+    levels: [103]
     image: characters/civl_st.png
   - id: 455
     model: civl_ch
@@ -8761,6 +8768,7 @@ entries:
     drop_chance: 20
     speeds: {walk: 1.629, jog: 4.857, run: 7.801, sprint: 10.245}
     script_names: [Spectator17]
+    levels: [103]
     image: characters/civl_ch.png
   - id: 456
     model: civl_sk_pe

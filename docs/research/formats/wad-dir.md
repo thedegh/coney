@@ -38,9 +38,9 @@ The folder is flat: there are no subdirectories under `ee_files/`.
 
 Example: `./ee_files/global.lua` → `0x7e23a6f2`.
 
-**Recovered names:** 3,990 of 10,701 so far (2026-10-04), from strings in the ELF and inside WAD files, the names
-scene records carry, and level-number patterns; how, and which kinds are still unnamed, is in
-[WAD contents](wad-contents.md#names). Entries from index 3,615 on are stored in ASCII order of the upper-cased
+**Recovered names:** 6,313 of 10,701 (2026-10-10), from strings in the ELF and inside WAD files, the names
+scene records carry, level-number patterns and the world loader's format strings; how, and which kinds are still
+unnamed, is in [WAD contents](wad-contents.md#names), and the list is [WAD entry names](../../references/wad-names.md). Entries from index 3,615 on are stored in ASCII order of the upper-cased
 name, which rules out chance matches.
 
 ## Entry contents

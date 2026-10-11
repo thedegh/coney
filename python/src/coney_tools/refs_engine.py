@@ -185,7 +185,7 @@ CAMERA_SWITCHES: dict[int, tuple[str, str, int, str]] = {
     8: ("`0x0050b2b0`", "global", 1, "`0x0013b7b8`, `0x0013d6b0` (rail camera targets)"),
     9: ("`0x0050b1d4`", "global", 1, "`0x00101dd8` (power camera)"),
     10: ("`0x0050b248`, `0x0050b249`", "both pads", 1, "`0x00129c78` (auto-follow)"),
-    11: ("`0x0050b23c`", "global", 1, "`0x0012ae58` (argument of `0x00129050`)"),
+    11: ("`0x0050b23c`", "global", 1, "`0x0012ae58` (`0x0012b4b4`, the look-behind argument of `0x00129050`)"),
     12: ("`0x0050b2b4`", "global", 1, "`0x0013b7b8` (rail camera targets)"),
     13: ("`0x0050b1e0`", "global", 0, "`0x00121888` (views)"),
 }

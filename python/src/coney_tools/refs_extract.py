@@ -160,6 +160,11 @@ def _note(message: str) -> None:
     print(f"coney-tools: {message}", file=sys.stderr)
 
 
+#: The font's metrics file, which no string names: its bitmap twin `cn12.bmp` is named in the executable and the
+#: pair shares a stem (docs/research/gui.md#the-metrics1-file). Kept only if it hashes to an entry.
+FONT_FILES = ("cn12.met",)
+
+
 class DiscFacts:
     """The disc, read once and kept: the WAD's entries and names, the compiled scripts and the resources."""
 
@@ -169,7 +174,7 @@ class DiscFacts:
         self.disc = disc
         self.entries = wad.load_entries(disc)
         self._handle = disc.open(wad.WAD_FILE)
-        self._known = [*known_names, *refs_scripts.candidate_script_names()]
+        self._known = [*known_names, *refs_scripts.candidate_script_names(), *FONT_FILES]
 
     def read(self, entry: wad.WadEntry) -> bytes:
         """One entry's bytes."""
@@ -185,7 +190,14 @@ class DiscFacts:
         for key, name in wad.recover_names(self.disc, self.entries).items():
             found.setdefault(key, wad.display_name(name))
         # A CRC-32 match on a string such as "-61.622" is chance: keep names with a word-like extension only.
-        return {key: name for key, name in found.items() if _FILE_NAME.match(name)}
+        named = {key: name for key, name in found.items() if _FILE_NAME.match(name)}
+        # The streamed worlds' names are not strings on the disc: the loader builds them from format strings.
+        # (A world's own files are not stems: `level9s_ms34` would only find chance matches.)
+        stems = {name.rsplit(".", 1)[0] for name in named.values() if not wad.WORLD_FILE.search(name)}
+        sorted_block = (entry.hash for entry in self.entries if entry.index >= wad.SORTED_BLOCK_START)
+        for key, name in wad.streamed_world_names(stems, sorted_block).items():
+            named.setdefault(key, name)
+        return named
 
     def by_name(self, name: str) -> wad.WadEntry | None:
         """The entry a file name hashes to, if any."""
@@ -1020,9 +1032,17 @@ def topic_speech(facts: DiscFacts, images: Path | None) -> list[dict[str, Any]]:
 
 def topic_wad_names(facts: DiscFacts, images: Path | None) -> list[dict[str, Any]]:
     """Every WAD entry whose name was recovered, grouped by the name's extension."""
+    names = dict(facts.names)
+    # The level records name their worlds; the loader derives each world's files from that name.
+    table = facts.table("config_preload3.lua", "levelNames")
+    rows = [row.as_list() for row in (table.as_list() if table else []) if isinstance(row, lua4.Table)]
+    stems = {f"{row[1]}{kind}" for row in rows if isinstance(row[1], str) for kind in "sd"}
+    sorted_block = (entry.hash for entry in facts.entries if entry.index >= wad.SORTED_BLOCK_START)
+    for key, world_name in wad.streamed_world_names(stems, sorted_block).items():
+        names.setdefault(key, world_name)
     entries = []
     for entry in facts.entries:
-        name = facts.names.get(entry.hash)
+        name = names.get(entry.hash)
         if name is None:
             continue
         kind = name.rsplit(".", 1)[1].lower() if "." in name else "no extension"
